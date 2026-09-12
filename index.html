@@ -4,23 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050814" />
-  <meta name="description" content="NightCheck — live aircraft, satellites and stars." />
-  <title>NightCheck — Live Sky</title>
+  <meta name="description" content="NightCheck HUD — live sky intelligence." />
+  <title>NightCheck HUD</title>
   <base href="./" />
-  <link rel="preconnect" href="https://unpkg.com" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.v3.css" />
 </head>
 <body>
   <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="topbar glass"><div class="brand"><div class="brand-mark">✦</div><div><h1>NightCheck</h1><p>Live sky intelligence</p></div></div><div class="live-pill"><span class="pulse"></span><span id="status">Connecting…</span></div></header>
-  <main class="shell">
-    <section class="hero"><div><span class="eyebrow">REAL-TIME SKY TRACKER</span><h2>See what's moving <span>above you.</span></h2><p>Aircraft, satellites and stars in one smooth live view.</p></div><button class="location-btn" id="locateBtn"><span>⌖</span> Use my location</button></section>
-    <section class="stats-row"><div class="stat glass"><span>✈️</span><div><b id="aircraftCount">—</b><small>aircraft</small></div></div><div class="stat glass"><span>🛰️</span><div><b id="satelliteCount">—</b><small>satellites</small></div></div><div class="stat glass"><span>⭐</span><div><b id="starCount">—</b><small>stars loaded</small></div></div><div class="stat glass"><span>📍</span><div><b id="coords">54.90°, 23.90°</b><small>observer</small></div></div></section>
-    <section class="dashboard"><div class="map-card glass"><div class="card-head"><div><span class="label">GLOBAL TRACKER</span><h3>Aircraft & satellites</h3></div><span class="mini-live"><i></i> LIVE</span></div><div id="map"></div><div class="legend glass"><span><i class="dot plane"></i> Aircraft</span><span><i class="dot satellite"></i> Satellites</span></div></div><div class="sky-card glass"><div class="card-head"><div><span class="label">YOUR NIGHT SKY</span><h3>Live sky</h3><p id="skyInfo">Calculating sky…</p></div></div><canvas id="sky" aria-label="Live star map"></canvas><div class="sky-hint">Drag your eyes across the sky · updates every second</div></div></section>
+  <main class="hud">
+    <header class="hud-top">
+      <div class="brand"><span class="brand-mark">✦</span><div><strong>NIGHTCHECK</strong><small>SKY INTELLIGENCE HUD</small></div></div>
+      <div class="hud-status"><span class="pulse"></span><span id="status">CONNECTING</span></div>
+    </header>
+    <section class="hud-center">
+      <div class="hud-ring"><div class="hud-crosshair">+</div><div class="hud-orb"></div></div>
+      <div class="hud-title">LIVE SKY</div>
+      <div class="hud-subtitle">REAL-TIME OBSERVATION SYSTEM</div>
+    </section>
+    <section class="hud-readouts">
+      <div class="readout"><span>✈</span><b id="aircraftCount">—</b><small>AIRCRAFT</small></div>
+      <div class="readout"><span>◈</span><b id="satelliteCount">—</b><small>SATELLITES</small></div>
+      <div class="readout"><span>★</span><b id="starCount">—</b><small>STARS</small></div>
+      <div class="readout"><span>⌖</span><b id="coords">54.90°, 23.90°</b><small>OBSERVER</small></div>
+    </section>
+    <footer class="hud-bottom"><span>SYSTEM ONLINE</span><span>OPEN SKY · CELESTRAK · HYG</span><span>◉ LIVE</span></footer>
   </main>
-  <footer><span>OpenSky · CelesTrak · HYG</span><span>NightCheck live data</span></footer>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script><script src="app.v3.js"></script>
+  <script src="app.v3.js"></script>
 </body>
 </html>
