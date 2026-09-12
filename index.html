@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightCheck — Live Sky</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>NightCheck</h1>
+      <p>Live aircraft ✈️ · satellites 🛰️ · stars ⭐</p>
+    </div>
+    <div class="status" id="status">Starting…</div>
+  </header>
+
+  <main>
+    <section class="map-card">
+      <div id="map"></div>
+      <div class="legend">
+        <span><i class="dot plane"></i> Aircraft</span>
+        <span><i class="dot satellite"></i> Satellites</span>
+      </div>
+    </section>
+
+    <section class="sky-card">
+      <div class="section-title">
+        <div><h2>Live sky</h2><p id="skyInfo">Calculating sky…</p></div>
+        <button id="locateBtn">Use my location</button>
+      </div>
+      <canvas id="sky" aria-label="Live star map"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <span>Aircraft: OpenSky Network</span>
+    <span>Satellites: CelesTrak</span>
+    <span>Stars: HYG / bright-star catalog</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
