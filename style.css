@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; background: #05070d; color: #eef4ff; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 50% -20%, #13213c, #05070d 55%); }
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:18px 22px; border-bottom:1px solid #1b2639; background:rgba(4,7,14,.86); backdrop-filter:blur(14px); position:sticky; top:0; z-index:10; }
+h1,h2,p { margin:0; }
+h1 { font-size:24px; letter-spacing:-.5px; }
+.topbar p,.section-title p { color:#8ea1bd; font-size:13px; margin-top:4px; }
+.status { padding:8px 11px; border:1px solid #263650; border-radius:999px; color:#9dc4ff; font-size:12px; white-space:nowrap; }
+main { max-width:1400px; margin:auto; padding:18px; display:grid; grid-template-columns:1.25fr .75fr; gap:18px; }
+.map-card,.sky-card { min-height:560px; border:1px solid #1b2639; border-radius:18px; overflow:hidden; background:#080c15; box-shadow:0 20px 70px rgba(0,0,0,.25); position:relative; }
+#map { width:100%; height:560px; }
+.legend { position:absolute; z-index:500; left:14px; bottom:14px; display:flex; gap:12px; padding:9px 11px; background:rgba(4,7,14,.85); border:1px solid #263650; border-radius:12px; font-size:12px; }
+.dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:5px; }
+.plane { background:#6db7ff; } .satellite { background:#d59cff; }
+.section-title { display:flex; justify-content:space-between; align-items:center; padding:16px; border-bottom:1px solid #1b2639; }
+button { border:1px solid #2d4569; color:#d9e9ff; background:#101a2b; border-radius:10px; padding:9px 12px; cursor:pointer; }
+button:hover { background:#17253d; }
+#sky { width:100%; height:500px; display:block; }
+footer { max-width:1400px; margin:auto; padding:0 18px 20px; display:flex; gap:18px; flex-wrap:wrap; color:#667994; font-size:11px; }
+.leaflet-control-attribution { font-size:9px; }
+.leaflet-container { background:#0a0e17; }
+@media (max-width: 900px) { main { grid-template-columns:1fr; } .map-card,.sky-card { min-height:0; } #map { height:460px; } #sky { height:460px; } }
